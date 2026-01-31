@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Lake Series @ Shila Sawangan - Hunian Modern & Investasi Properti Premium</title>
+    <meta name="description" content="Dapatkan hunian eksklusif di Shila at Sawangan. Kawasan premium bertumbuh dengan fasilitas lengkap, akses tol mudah, dan promo DP 0%. Unduh brosur sekarang!">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --forest-green: #1a2e26;
+            --gold: #c5a059;
+            --cream: #f4f1ea;
+            --text-dark: #2c2c2c;
+        }
+
+        body { 
+            font-family: 'Lato', sans-serif;
+            background-color: var(--cream); 
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .navbar-brand { font-family: 'Playfair Display', serif; }
+
+        /* NAVBAR */
+        .navbar { 
+            background: rgba(26, 46, 38, 0.98);
+            border-bottom: 1px solid var(--gold);
+            padding: 1rem 0;
+        }
+
+        /* HERO */
+        .hero-header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijmtFZLUBnfuf6lbHT5PfFIgvI5AxpUeNXi-T7SX0PZl8lYxtxzI_e-30Q2hGRNhSWYapK_wnZusimAevlZimnCXkf9Xd2eomuyuJxBmQvwPhsa-RpeawTaFle2jqOP_b4MVH7IS03CnkaXiTOFnnJ55Q0zVv5L7dubREJwS7YkfLaneKtOiNJWPG2/s1600/page_25.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 { font-size: 4.5rem; }
+        @media (max-width: 768px) { .hero-content h1 { font-size: 2.5rem; } }
+
+        /* GALLERY & CARDS */
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .unit-card {
+            background: white;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: 0.3s ease-in-out;
+            height: 100%;
+        }
+        .unit-card:hover { transform: translateY(-10px); }
+
+        .price-tag { color: var(--gold); font-size: 1.4rem; font-weight: 700; }
+        
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid #eee;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+        .spec-item i { display: block; color: var(--gold); font-size: 1.3rem; }
+
+        /* VIDEO WRAPPER */
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        .promo-banner {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXpTK6R2YDwRGx8A6we-griBwwnr9Em1SolMWqHHhJxX3SJSHRhBcIl_DcBQOYuB1oDmuFZtKxM0yCTZlA_tGyv4hOnO8rj1swP0HrAJu1J9WPgAcY4A37acgXSUrzgU1g8sDL26UkShlBIc60ZzOZFSblP5_ZLyg2LOah0TJ1prsxM2sSCWu1Ql1u/s1600/page_30.webp');
+            background-size: cover; background-attachment: fixed; padding: 100px 0; color: white;
+        }
+
+        .btn-gold { background: var(--gold); color: white; font-weight: 700; border-radius: 0; transition: 0.3s; }
+        .btn-gold:hover { background: #ad8b4b; color: white; }
+
+        #backToTop {
+            position: fixed; bottom: 30px; right: 30px; display: none;
+            background: var(--forest-green); color: var(--gold);
+            border: 1px solid var(--gold); width: 50px; height: 50px; border-radius: 50%; z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6EbytJ1UPl23PJ1tHTiMAC8YAyGKnhsAqGGBbzLGpxqa7-qt_vFdEAw5P44qZL83SVqzba4jfXdPbbsNad2eIwGGERZs9fEAfARgVZiaLFwpUTfqJLzfQsXe4il5OVuZaOYb32mLEm17CZ7FkqcQ9AheVocGZoYY0UyYIqqlknof1zWV4jOokn8tA/s1600/Lg%20Shila.webp" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#fasilitas">FASILITAS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#site">SITEPLAN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#unit">TYPE UNIT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#progress">UPDATE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-header">
+        <div class="container hero-content">
+            <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">JAKARTA'S SOUTH LAKE LIVINGS</p>
+            <h1>@ Shila - Sawangan</h1>
+			<p class="fs-4">Lake Series Shila Sawangan merupakan kawasan cluster premium yang menawarkan hunian mewah di lingkungan yang asri dan eksotis. </p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="#kontak" class="btn btn-gold btn-lg px-4">UNDUH BROSUR</a>
+                
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <h2 class="text-dark fw-bold mb-4">Lake Series @ Shila - Sawangan</h2>
+                    <p class="text-muted lh-lg">Cluster yang dirancang untuk pribadi pribadi menginginkan tinggal di lingkungan yang tenang dan indah dengan privasi yang tinggi. Desain hunian didalam cluster ini mengusung konsep "Living by the Lake" atau "Waterfront Living", dengan akses yang memadai dan lengkap, serta fasilitas internal yang dapat dimanfaatkan untuk menambah kenyamanan penghuni. Lake Series, terdiri dari 4 Cluster yaitu: Cluster Laguna, Cluster Lake Vista, dan Cluster The Forest / Kavling Siap Bangun. Cluster selanjutnya South Lake akan dikembangkan sebagai hunian low rise apartment </p>
+                    <div class="row g-3 mt-2">
+                        <div class="col-6"><i class="bi bi-check-circle-fill text-gold me-2"></i> Dekat Gerbang Tol</div>
+                        <div class="col-6"><i class="bi bi-check-circle-fill text-gold me-2"></i> Aksesibilitas Mudah</div>
+                        <div class="col-6"><i class="bi bi-check-circle-fill text-gold me-2"></i> Fasilitas Lengkap</div>
+                        <div class="col-6"><i class="bi bi-check-circle-fill text-gold me-2"></i> Desain Modern</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKlzbBJevUKUZZEXH2LKFkZs42CbzE6Iw3zviQ3ntfdUYLgA8NgqDiYFI3cEKpV2_0d7H6JHqebrVHGmBmXz2CN1qCW92au7FEF_vfPfVf1300fX3krS3mF3IjlImClYX1fVDdHwVsg8WzfXysBOUoRPicGpS0rlzW7g6LJyf-FazD6TcKROEg4xo8/s1600/Masterplan.webp" class="img-fluid rounded shadow-lg" alt="Masterplan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fasilitas" class="py-5 bg-light">
+        <div class="container py-4">
+            <h2 class="text-center fw-bold mb-5">Fasilitas Eksklusif</h2>
+            <div class="gallery-grid">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhY0As7vXyzR44z3u5RCOkEpaH4z2oYZxi9TP0vFuiUNNgkOC8O3KgPOaZ0yxDFLOYi9hxBRaSB479gd-zgT_VvLHsb1fMCcbhVxi2JUjxiOXomT5uu7u5FR-0BEHTTlnJQJkp3UbyZmraWlPFfuYrYJa09l0Dklqa_97vWveX4jtJSsljvHD6KpWMR/s1600/LV%203-Fasilitas.webp" class="img-fluid rounded shadow-sm">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgt1nMInRTFAAG1X6FrsWFTa8wPcDm1xOaaD3OtrxU_KC5Q4FuUd8buL6zTgkYzVhgPcdVN5SYwCXas4UV4SRZqpT18qC3NEqkwPQc-7Yrn5G10ijxJgTkAOfrGBBJX2D42VRd-A5FDcmiDlrKesFC9dU5gdvvPMYbjLZ5auwTG7PpHs29t2YiOZMp7/s1600/LV%204-Fasilitas.webp" class="img-fluid rounded shadow-sm">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFz_v2lzCrUS4AG0_sMinXhs1-8Q-kDX16C-5s4IXsTixe9rDo_c1c4E9GlCj3BT7RRYWqWwUn7Fp5p4B4viatK_rCUOLBFN0sbu-lSGkl-RZlT7EQSoVbmNHA4q8tc-vKTeiYzvSxzjVCf9bP3VxdtCTCfR0pDc6Ae3BJbs6uqEkJJ-OMubsYpHxr/s1600/LV%205-Fasilitas.webp" class="img-fluid rounded shadow-sm">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCDn6F87Z6khzuYp7zUluWrwKaP6M_G77zdtkUYelN0azYgPkUb2OmsKMVZ8VKLpt4B5e7B-eYja-4dJVgdUKaa42F02rFqpjvXDr0f1DMHvyVuz-aa_ok3XwFHt9MwiO77b4TXbASxK6zxcmNygfQ2jsFAfVZFsLicExJzPd2_8MeL91VvTJak6ob/s1600/LV%206-Fasilitas.webp" class="img-fluid rounded shadow-sm">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCpka3ULsxbp7U_GQpQD1tdWl3io9pGkrNgASvr3eWCW3XEj5rm5B62nRJFY3PJXwarNsOqXwljKMHMdehXj9u5DLGhr7r7UEQUeN4NLx2S4OJGpomS0pU-WCxW0pTl3mM63O3c4X8cVV9FaoaenSsGOAROHDq7RnsyLnPt_Ph4ICcxZ_RnX7QZhaI/s1600/LV%207-Fasilitas.webp" class="img-fluid rounded shadow-sm">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAcuwfO7qRfZTu43YA54YtwjfQPMEegj3wi4MrZ3hvJ-BYTiPe-8yfWryast9PjSDQfGjIqSIrI2dTONvxpXvUeKmNW_GWE6m6NJkKhbgPa383GBTP_Hdrp88iSq0wI4vFcCTbeoQZ7mpzwu36BPAqX-lS__MNLu-0GMORVYnOMMHvZPO4PYxU_OUI/s1600/LV%208-Fasilitas.webp" class="img-fluid rounded shadow-sm">
+            </div>
+        </div>
+    </section>
+
+<section id="site" class="py-5 bg-light">
+        <div class="container py-4 text-center">
+		    <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">CLUSTER LAKE VISTA</p>
+            <h2 class="fw-bold mb-5">SITEPLAN</h2>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgNEz8n5ZtlmHpsyCsmNwKuK_0DyS5IAPxSC2m_kbi9l51pd5qgb06WrGf58xG3W0ajIophevjtRk7p7xaaVdKpbjn_jfvGnrKnl5CHhlKaddB1k8zWa02OuF-eGlS76zObBYSLnLCS1vh4tLg5gG1KwQWtB1qo7xgM-ny4jb9CjIszUi-W1tCls-pa/s1600/Cluster%20Lake%20Vista.webp" class="img-fluid rounded shadow-lg mb-4" alt="Siteplan Lake Vista">
+            <p class="max-auto col-md-8 offset-md-2 text-muted">Cluster LAKE VISTA menawarkan tiga tipe hunian eksklusif tepi danau yitu <b>Type Pavilion, Type Tudor,</b> dan <b>Type Portico</b>.</p>
+        </div>
+		
+		<div class="container py-4 text-center">			
+		    <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">CLUSTER LAGUNA</p>
+            <h2 class="fw-bold mb-5">SITEPLAN </h2>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoUqwzHUveF0mN-7p3rH9xz9jseN92ghIF6yKwmotClPEFh1sp7yf-JNfPgRxrGfmnIJgjQWVs7yOqrZL3CC_p7sdO7GcnHydMt45sR1JWufXyuLcfIrwTJETObfk0AAnPTBX1ux6jjcZ46N-iKk05F4kDXpgl9D3GByQ3Aqy6FYt4zX8emtSL5Uj6/s1600/Fasilitas%20@%20Laguna.webp" class="img-fluid rounded shadow-lg mb-4" alt="Siteplan Lake Vista">
+            <p class="max-auto col-md-8 offset-md-2 text-muted">Cluster LAGUNA menawarkan dua tipe hunian eksklusif tepi danau yang dirancang untuk keluarga muda modern, yaitu: <b>Type Oakwood (8x14)</b>, dan <b>Type Verdant (7x14)</b>.</p>
+        </div>
+		
+    </section>
+
+    <section id="unit" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Detail Tipe Unit</h2>
+                <div style="width: 70px; height: 3px; background: var(--gold); margin: 20px auto;"></div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="unit-card">
+                        <div id="carouselUnit1" class="carousel slide card-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiT7tziTBqBKJy-R9EWikdWyRxkyoYzgTl8vwYJ08lGCaqmUIWq9Aj-EaFVrApAq-HLn7r_5TgAjOspISHAspIOVJkJgmvR3ZPU6dY_bQ8K2PAOmkMoeoOaLS1by028mmSBgK1emqfNJpxkKo04iXG8GIZafJn0ViWbuTWjzJOKfgRc40NuQZ9kvEvF/s1600/Type%20Oakwood%208x14.webp" class="d-block w-100"></div>
+                                <div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibqsPZoVGyCYTyY1VkWYfw9ldVkt_pvEoEN4PB_RPlqUqtYvPoBVTSHdbgURuQu3nHIEENv2Da1NUGc7VxViJml_22AloaMWh8ahpZ5MjwKpqrIdmjA46ABBAhKk5n2S3xxiggpNDvA8y4lJSRFRPRctht0X044d1yt-TG-11g43Txso9Z4lPL4BQm/s1600/Type%20Oakwood-FL.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghPImFuRnqLIaTSjaO2hEQe2nK5m-jioV4NiwuLq7GHJ4iyOj00mSi2OaGd_10lrt7cMTqAik0Zji4QCrar3s6JXwAZBacCHu1004lJDd7QUtqiFjfa1S3907nvufd6Md7br2rDmPQuy5Fv44uCSEPIdvyeb5tfnPbR2KBBoxrJMYz-GqJ-KzNuZKK/s1600/Type%20Oakwood%201-%20Interior.webp" class="d-block w-100"></div>
+                                <div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhc3ngWieG04I2NxP060xik5DE0B7AZxsZ2qUasYCdmzbhkG_oE9DAkxI576fLe9jU_3iNy_eO3CyBONabKMV1fJnCJdwAcLUcGWP5HZxu685O4pAY3TR7QF-_-R8T7ItAzXXdmRJoU4xFs4s2XtZV8MXAU-rJUJP0AyeSktqEeK__j-C2wrVQ5WD7m/s1600/Type%20Oakwood%202-%20Interior.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-STJSBJaA4YyPDrR7_d8vh7Kwcn4_vRFp1pm-n5FW9h7CLpYzdqlDBPhnFvtqoDS9lKbm4unakPWFanDkx41DdabFYEi2VNWrDuR9Wh5b1xXxChDUJgS7Ue_0dO8zy_0z16LkVOI3AkFjxo85x2F9-pNr6xluusfyZG0R-uU856oTcL9t-HJC1BaD/s1600/Type%20Oakwood%203-%20Interior.webp" class="d-block w-100"></div>
+                                <div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtTvN9ltgR-xcrhYcpJ478qg7wwSGIuL0IiQt5USCwYogjtSutUyzruurIWNWyWQK5Mq6gdGDgiAtsN6n4hKAXVpBrl3LTHdwtm-gt-fvrlTFOBAvze_XiFwUn831xcxI1zRF9AMdFHz9pVz_UDgxx1xjOqxBd0jYxGy5yWUr2O_BuJCzQEwuB8Vx9/s1600/Type%20Oakwood%204-%20Interior.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAQAgsas1zSKqGRHxUZGoTcYr5lECCGuJzTHILcZqqeDyeFz5M5Vj2csZf7RzbbvZS7sx8T6tzM2z39RAG4752_5blyzlY6-EcXZvpzn4wf5Mqr8Ro99nIjj7jLtV-tlseaBuAvSpmalY7JLzuBOVnFRQr2SSQSNS-5mBavtqe2VaFuCHouU3K9xAt/s1600/Type%20Oakwood%205-%20Interior.webp" class="d-block w-100"></div>
+                                </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnit1" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselUnit1" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                        <div class="card-body p-4">
+						    <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">CLUSTER LAGUNA</p>
+                            <h4 class="fw-bold">Type OAKWOOD</h4>
+                            <p class="price-tag">Angs. Rp.11.8 Juta-an</p>
+                            <div class="spec-grid">
+                                <div class="spec-item"><i class="bi bi-door-open"></i><span>3 Bed</span></div>
+                                <div class="spec-item"><i class="bi bi-droplet"></i><span>3 Bath</span></div>
+                                <div class="spec-item"><i class="bi bi-p-square"></i><span>2 Car</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="unit-card">
+                        <div id="carouselUnit2" class="carousel slide card-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTga8BECylEdJI-CevoslWf9U55JAwLzVb7cYK8Q5b9IKWEVXpeYQLZNvGpOjdLK6xxtkpL07CMEZTkPkruqfhqnm5mw8Ye9QuhO8vCPJfEn7I-BEqv0VRgXdBG6ZcTsaO_Js6HBaIpfQSfDuTyjXLMFqbfr7xMmD4S9ihWVZ-9muxwB2_OGRtvFne/s1600/Type%20Verdant.webp" class="d-block w-100"></div>
+                                <div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZfg71duGHCwFKVOkbctwDC6ldVvkVCjSL2t6rVvjlL85ENurTc93HDX_t0nKAak41zJW16wI0AJCyCe8cZBH9HWwk7MmM-bWIzCtroCYhX5Q0vdw8eQBk6yqyTMjS418xNiNnLS6H4cKu7kYiNvdveMmlcI7pqHztzIpIpiVyiLCINXxN6-kD_844/s1600/Type%20Verdant%20-%20FL.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgIDsOlek8gxsPrtLz43zoVv0a_nKMt-ADXuhh4bRgIuoffzV0C9WFkSSRkzyIBIy8tYTPbDUUf16X3ocPPBe3yN3PeTkJe6SQcBKyLuJlRUOEd58As9PiWiNuUM_rOu1K1vsjqbfpfWJ1uuPjuJV82GySjBy1D4Tm-GeQD560qWwFhPFP21W_te99/s1600/Type%20Verdant%201%20-%20Interior.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2jEvkUxLYdlDkxJafPo0lVrvBUbr9X8dsysh7dFTxdCRZjWZUs9FpOZykv3i71lJ2UkPFhppTdMNdT7FmXbArEYNFGT6e_DDAzTG3PZ-kEev5cz5DO1yy9YxznfoWTzolWwISj-oFV0hBlBLvO6_waqd9EQnJcLzbG_VgKrAfJca0YT4ZxpebRgTe/s1600/Type%20Verdant%202%20-%20Interior.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgw7O3t_VQfyNAzGIA6pmWXadql9cTtTpleYEufZNUtKb_PNZIGTYhNabiS8XIxi50rhyphenhyphenpzRGAXNSaXq930qV5RGwVzxBtSsNZPLSh64h01DSKBnPfZahdh3bz9Y5Q1W-c_dipYs-7aMQ95G0IsdHq4p5-9eSoavAw9L2N8FcniD-tgwMzt6CnT5oMc/s1600/Type%20Verdant%203%20-%20Interior.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjMid8Erru68FVkA0-D5dKiTJO-ZvxTxfZvII4lXGf5RMr270dbG5vBR98QxI97sw0jgRCo2aL4a3LXtWIFWbYA0iv6pbIoSeF_col_h3I3ANwYwXD5HtrymSQBdrnmBSJ5NlpkWsWGcPWaPzIzS2W2NurzsYRZjwB3rFh_Bmkw55fK7GX8d2aq5xv/s1600/Type%20Verdant%204%20-%20Interior.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiBROnvjlguc8fMgRLaLMSIz5sg1MG_ARQ7YfR1og6otoJ5hUkkXw2WTLvSimNzyd4yxm16eSbTku0C_dHzO8YktM5HWCwWBJLcRIAKdfhXW5DUCfHtuv7RIWVuNBfeoP3WDe-32wIk2dphTMbM0so6Ym8wHbnjtkTLuxzuIbdKfnnzyB2GAsJAri4/s1600/Type%20Verdant%205%20-%20Interior.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjadyHU0j9HoihU5sQG7J0swFnSGHloA1Ym7xTFl_r5afR6iJo4kq37h2AA38yQrZnzLvbeZcpWgQqRviUjTzxjz1ppbCDYRtqxlvk1hzTuAxyMoY8UoZHoWEOi6y9KdrR9WftxQJKYPefYBcwddETWF7cgw07o7q_4dLB4n0JUIvJlOJAxTIj7HCf/s1600/Type%20Verdant%206%20-%20Interior.webp" class="d-block w-100"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnit2" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselUnit2" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                        <div class="card-body p-4">
+						    <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">CLUSTER LAGUNA</p>
+                            <h4 class="fw-bold">Type VERDANT</h4>
+                            <p class="price-tag">Angs. Rp 10.2 Juta-an </p>
+                            <div class="spec-grid">
+                                <div class="spec-item"><i class="bi bi-door-open"></i><span>3 Bed</span></div>
+                                <div class="spec-item"><i class="bi bi-droplet"></i><span>2 Bath</span></div>
+                                <div class="spec-item"><i class="bi bi-p-square"></i><span>2 Car</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="unit-card">
+                        <div id="carouselUnit3" class="carousel slide card-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiJB29d1Dqm8UT_j9cZHY5a9ZB_wHvNHGcYsFS4de521484xzkR43woPuLJoE1hCnNEI-ltgnGdASzYNBEPV6H9VcpyTUHscDNZfUunZR3SOd1no13B9jl636SsSAZP_qpIKTIIYfQGMMjJhehjG8YhS6cahP2uy3AgsRdoVSkTQO2D-_HSJPIxW97-/s1600/page_1.webp" class="d-block w-100"></div>
+                                <div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8H7X9ziOuYWbSaIHsKk79Y5kCBg_K3G8mhDS-HlakQcpAQphVm1gt7XmR-heZYDBjeVWyBua8S_eqmRUPIJQwcrwCg33zPzS20pmZNosit6ynJWsiGakjFM7rsT6QrkBJtGFQy3nptwRF1OZmPEWerUFmqm_44AjFXAHqc3MM8Nqf9S3CufQj1V9G/s1600/page_2.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGZuTIyUK8A4kB7mWv4Vmo3fCL1-dlXQ6depfjOwyPUljKnZQxuSOHZkSuxNc16eAw4Gk_-vw3fPFI7LXuT49NJc6Fd-6CcW2A-kXPnU9hwRfmba10hNijl7rD4gVT-rdUI0mXyVtAvegwQzdUBKtuYdKEHQytaeWouxOicbUjmzsAG8nyRkSrdKcT/s1600/page_3.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjREnUv5_wqe5C5ZVvwt3oKMeitWhkzOAqav2aF2fvWM1T3XpWfXOg8SE8rrkCH5hj8jME3M5ncHBy1TG7lqVejJx5XvUOLRFHeyCUUTop9QR1kwESIzAjpzhYUn-Md3y-XkzNMqTkPKpHh6ytZY7fJadNVs1GXg6BP1zQgsFO-XDzckmltS_hjUwRm/s1600/page_4.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvnkbrIew6-D8hkfbUK8Wjov0DLZlUvSAP8w2P7F477ducSGdSpxpW5gk4tqLGIo1aUCRNY0Q9TRZOINois2XyxGT__ukcSty5mAnNr_WayCN1e0IlvEa2awdW3-zA3Ln-G2oQyxxN4GDKUHaWBwDQhlvDlsF-c7iC7eIFOSdQ8vqpui8191m3FY_m/s1600/page_5.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXV5_9IDbfMtkcf5jifxlEapuREgyQC6Uc_XXojay2nr-rb54NjYeTsEjUSmjA1S657huNILxCjS9cHhUjWpmnX28KAIUOXmsDUCZ4mbLWJ7KwsTh62PvxksOy-P9LgpjGLjJ_AkjLPx_tt0NB5iKTo1dnxWXhuji9N3GJzBH0qh6Lhhgzx60epTtw/s1600/page_6.webp" class="d-block w-100"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnit3" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselUnit3" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                        <div class="card-body p-4">
+						    <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">CLUSTER LAKE VISTA</p>
+                            <h4 class="fw-bold">Type PORTICO</h4>
+                            <p class="price-tag">Angs. Rp 23.89 Juta-an</p>
+                            <div class="spec-grid">
+                                <div class="spec-item"><i class="bi bi-door-open"></i><span>4 Bed</span></div>
+                                <div class="spec-item"><i class="bi bi-droplet"></i><span>4 Bath</span></div>
+                                <div class="spec-item"><i class="bi bi-p-square"></i><span>2 Car</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="unit-card">
+                        <div id="carouselUnit4" class="carousel slide card-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhBDF0d2Dk0t9KVPltqe7jVOej0nDnwX_c2macWG7aXqYJhWFHlV8rkeY1En4OVIUXZKzJmgeJ_8tbpMK-BwHj9Pu1tW1xrACK_LzwZ8d818yV413qO1zS8S9eowMvV86_6NRED3WnbFHKvcBJS94v4Fedqk9h4zARX4RGw7tny9GbYJxlKn_6ARLf/s1600/Cluster%20LV%20-%20Pavilion.webp" class="d-block w-100"></div>
+                                <div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjG1PfJPt4Wdw9hgdVDCfdo1LteWzovBOxPwAMgduoCwpAfsadfblQp1-cF5oXhATZMOCKk_npNjsR2rH60_z1bXXX6mQUPBmdGNdT1_iyFT7qIqdlIk3_Jz3BGb9oWVwW9r1VPDAt02UqgS3L2aUvGjy7AjGfly-sE4XPlhzFk5wIUJPk8bUnCHbDm/s1600/Cluster%20LV%20-%20FL%20Pavilion.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdIxWHbR0MKg1XcmAsuIKL7St7I1LU8FThdsisl5k1TLUuHbZxB68RrQtBff1JAqp-KeL4M5YrkMTGegLnUk8bVfrYipyhRqikFkDQNtc6n0VwVaMPQAlqHt75LXFHWxHhODO8CZ31Oa8_5r_QM07zGsOE-e3wwa4PpRbLxGFTGWfGKgkIOWIQJbMN/s1600/Cluster%20LV%201-Int%20Pavilion.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvA6pELNui_BZilGFnPOlmRGxmKuQ1xcAt7mcQrj537wkJG2th45EBpqWVx9ASYPucjwCPKpTaWnlB5J31rvdTInUUQwjTl9EULRwbESHwAON7m1nyKEt5AdV96opU_9rTcZd4RTy1mkdulX9AUEipzItbMFYdV2AlHgkSVRRCHKqTLksxVGcycEKr/s1600/Cluster%20LV%202-Int%20Pavilion.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-bGHVHQXpPgtkjRn_Joli4gu5xio_a8bV-sAeuotrrWI_NhhKYwd9V6SDOHu-fKpo2jzbaJXhoGOfcF_GZoXEAuJGZ8cCmgwaK7anLWWaFCjohBUAO_zbznQSfYkovfbzE8jfTwZ8j5XKg3qvJ1so5170P-NGWCulndvT32Xhr_XX1TwSSwYsSdKg/s1600/Cluster%20LV%203-Int%20Pavilion.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEVgPV4IlWZJdJxeShnEEumh98ZYTSlxAZ8zNoN1hxCI_rPGO_PYBtMQEM_h8O3NznHB-EdIrtAaQUsf-eMXKyI0a_U_5cTRZPtneHLYOOvwaBU7HsCp1EvaswFwpe56x1rcYUXiG-xB85QDa1Hl96P5koFRaEH8x_4D_fT7iuMTaPyWjO7hKrvagY/s1600/Cluster%20LV%204-Int%20Pavilion.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcQU-Kg2uEu_eIc8y1V__WE5500YE0FIDPqjR4cLhyc9GV10M_pUhy7uanpsZJlk2zPbJW2ejaE6dHaCaR30r9nWKzdmDKqFtjSuQUm50r4-2mzzgp0jwQ05oomcaZmDstLatpnUIn2WQH6HLhfALa5TPNDDz8ZL3sSqkI-0tmVVtfKJgVQqNY-G-T/s1600/Cluster%20LV%205-Int%20Pavilion.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmLID_KxqWP0P-ISrQf0wgHES4GuXu4nIHZWyyCSCf2dCT9X5r2el09Stafvt7KBXzGEujRWSrqbH0UO1ibJDYgWYYmRXex3CZI8uvaYJK1hZf1ArOISNO-87LkfNUZmisWnQ3Sl0QO8Ge5RlxjgPbeRUO9I5QwGxFrVk4U-4JoQoeauDIc5inU-lK/s1600/Cluster%20LV%206-Int%20Pavilion.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtcCPrpaKDiW9UCGKb6IsH5tSg25OekK6SScXp7jF-YfB0tvYPO2V6nYTB7P1iPyf70-BV58fdsGbOZCcwYK4YQVz5gQ6ijPUjybuxkZVVjUc4hCKxrpnh1mYyfLzDVXWWz1kQKwv2Wd7inO_jus3G-Hh55fo67hr8wXnhmRAwNPg1PmgfDHrUltFU/s1600/Cluster%20LV%207-Int%20Pavilion.webp" class="d-block w-100"></div>
+                                </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnit4" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselUnit4" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                        <div class="card-body p-4">
+						    <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">CLUSTER LAKE VISTA</p>
+                            <h4 class="fw-bold">Type PAVILION</h4>
+                            <p class="price-tag">Angs. Rp. 15.2 Juta-an</p>
+                            <div class="spec-grid">
+                                <div class="spec-item"><i class="bi bi-door-open"></i><span>4 Bed</span></div>
+                                <div class="spec-item"><i class="bi bi-droplet"></i><span>3 Bath</span></div>
+                                <div class="spec-item"><i class="bi bi-p-square"></i><span>2 Car</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="unit-card">
+                        <div id="carouselUnit5" class="carousel slide card-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQe9431uWdWWzu_jW_vBW8BKndrhuldGs3BGgwrNN_O_novrcaArUl0wk28sdl-KjYaj9lELfCuXITnap-T5NYHxL875M1pbW0GyT9oz0loLUD67mS-PqW16fAslnWY15T4ALYwpLBsYpUEBdoBSEIfdLCZXWHP8eRnY6-VSuP91dQsO8t-kJFIZMV/s1600/Cluster%20LV-Tudor.webp" class="d-block w-100"></div>
+                                <div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiud_JdPzZSedb-wu3icIaFNu9NY-XbnEnwiQFVVS0YEKllqVRR5iohR2QxvAdcBkJXMISABCSw3kTzgoNf0xN8UtVSFS6qw4ZSX8WrIAlPr4Ga0KOAaq4K7NDDLp7VLRPdldqRNgnMdV2h98Xfz00w4LuBVWKo6W0SaMkbjm9TAkfbKvsU7rX4ydNt/s1600/Cluster%20LV-%20Denah%20Tudor.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4AKKx-BetCBGLfslor3UT44Nz7KHm8dWWeu9wA0xtcTgPfdx6SYa_jeZCqWwCM_vHNo6AAdakqF3r1Td0cu3efSPkKYG3uUDQ3aMWynb2D3FGo_Uv6RTVS2bV4qtG_gfrVrnWx5qFISpyjIhtVb-ssWSuKZC3sIT4sYKkoB3TfOwJPbn8FjkPHBqg/s1600/Cluster%20LV%201-Interior%20Tudor.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpvp1ugh88Xfz6CGRNOBiSuZvpcPK5BCCoezXcvS5FZ0TLMoyz5CM7bvNZEH1dm7yanRAhiAEweDTSVKW10w3G3JAt-hcRj-OycVpaj_iew15gawhUM9GDgG4Rvkp4pGqHy1b8Ox8y9P0XE54yxa9vEzz8teJSXoh18UaMcxuiLTBED6ClrJkJQZIO/s1600/Cluster%20LV%202-Interior%20Tudor.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXDCfrLnXX-EANkkti_Pjjwbw6jA0v0GsfYzul0d0H4V5O2n_dLwXFFOsYVa2obhWegII9NgOfhDo5gf85QydXqmhfeq9xeeCRvARRgzA-oyEDfjObN_znV71qY8dM90QSxincJYy2FB49-DGVAq2OjVFlJdxYdQ9Zl4BqiUdRF0KfocR0SfLW8MqY/s1600/Cluster%20LV%203-Interior%20Tudor.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgebgMIYTHFkRwdzIT8vwiZXoqclQRNwSMjQ0eM7DFhwDUI1kspnYvKCnJSukrlSmnoAjL6Qnk7GgdFfdIoeeiVSgmKlSV3RnLiY3Wf9pUI-tdV_gzHGvQOFWRqFfvPIvSZ9DfuIl-TlseI3RrspBDj27Ng1GnEsE5mcyyTLd3UNKWN-coQ4afShjVX/s1600/Cluster%20LV%204-Interior%20Tudor.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitCb-1zSqke8GQmv3Ci9_LzMoegVvnKtRcbbXln3a60cQJi3PdPmqCTRDPPfcv-SyjPeFReHmsfO5xYQ5yAJf3vVgfN5eUb9HzY2ygpkCWzW9cCK6SUXNT2mjNO5mLEmgKQtACOUidHDExxfSaF6PQNmPeOaENPNad1nI0ipnCIxEtZoopKeNd6LBE/s1600/Cluster%20LV%205-Interior%20Tudor.webp" class="d-block w-100"></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnit5" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselUnit5" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                        <div class="card-body p-4">
+						    <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">CLUSTER LAKE VISTA</p>
+                            <h4 class="fw-bold">Type TUDOR</h4>
+                            <p class="price-tag">Angs. Rp 17.61 Juta-an</p>
+                            <div class="spec-grid">
+                                <div class="spec-item"><i class="bi bi-door-open"></i><span>4 Bed</span></div>
+                                <div class="spec-item"><i class="bi bi-droplet"></i><span>4 Bath</span></div>
+                                <div class="spec-item"><i class="bi bi-p-square"></i><span>2 Car</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="unit-card">
+                        <div id="carouselUnit6" class="carousel slide card-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9RvRVI2YuSzAIaXE6R3nu7zIvkLr0fzyesBsp2mokGaCkCQmmK6ipXuFWqLX8I7miLuZ-4T4qFGzPvCHLCkTcZPPpwm_1czCJq4oV41ymsWYoKHfWFP064n_TzpiN9zBPOgj8SuyQQSuSsOgsSxQ4iA12-tJ_G3TnMjje2VOrKc2mpTH3tBpj3ZGL/s1600/Cluster%20the%20Forest%20v1.webp" class="d-block w-100"></div>
+                                <div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgNvTcUiC5gXS992yvQb4DrIcqaan6B675rXIIk3R7r027Ao5oerEiljRR3uFcYou_VzQ7rGj9wARkMQFrF9nAB6pjBQL4Sovkx1kluszmzde1yrRB_uN4bhxGORxOjB9xSQaWy0FGdUwCByDhiLlVfPZsMjWKPO3w8qxhmoei4A8UE56Y7hMeKeA_S/s1600/Cluster%20the%20Forest%20v2.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiB8w1UVVoL4lQ7XONO54OtMWFOm9G_0grXZa8WZ0JSPDwResDprnTaLmyAdLjZrk_S_m7wTl6FluJcoIVSNPk8NTLruldlRJdizVCfK_nw9fAP_v_F7N65EuSj-Ax0swCtYNBJhPba1U1fmiyA8vExYLlMej8b2IB373vVwPB48-Lqhkti_SleEPbd/s1600/Cluster%20the%20Forest%20v3.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwpjOPi2txBZddcwlpjRLol6B_CHSVvauESEAJhxRVDr57QBmLdFM1FOKTuIQBGuomz19O6_4_Cq1flR8__vtM-Kws0aVnLrqCbI0M9EOGQ-T_1lZ863Q5CvZtPZNogod_4mXWv-w4VwrXfHdm2eW2koJEsPjUpPSKuK5O39x_OGMawchL9I4uwqb9/s1600/Cluster%20the%20Forest%20v4.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7U4pxmu3LmU5UaUWIGC8Vvtb_8NJd1K3vMapWcl0gC8eLl78g0cNfHZ2ijh281JL8426mu-3DEpLka4ze92RVUecFZIDIHbCOAMPo-yz3Cey0tpVmZdTaz1HRelVB70B6jCfZQyWah5sABgaBB7GOZPHQR8i99HcbgBDyc-3xCjnWGg04VY8N9p30/s1600/Cluster%20the%20Forest%20v6.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGk9Vm7o0CG5iqbxQcke4f6mtYLvyaIFndEowH-tK3UwC_-Gn9cwxJZ6EzjTf3vfPPuUJFsmfaM7SATIxtml9uxEQgnuSyfspECJvf8vaFyzhRAA-H0Em776DXUm8c437EiCWSxmvupBk0BUcUTmq0A93p7w7FhNMSAbDkIwFBbzUFqCoZ7IJfWaCB/s1600/Cluster%20the%20Forest%20v7.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxnB08YnDs4PDZVaLntzvCnpC6HoDqQ5Srl8GZkdiAEDI12-vIfSBuKBq424tJKEtqOSpiS8ABNVLWOyZCfRSYYeU4mGXoMBuYYogrqev8qYEnNQsyjRH7vAXknBETfEC2xj7GXFlQspFaHLzEBS0W_BCSx2DD2y22XhIonziWWvtsQmLz9aN3k5hf/s1600/Cluster%20the%20Forest%20v8.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpzWH8rFrjwBMiXLlkEJGqivbiiCRiWdywTqZhX1kP-Igb_5lgTD_qtyhTG6ZDNm0AIWeGONSw74y9h1_Ru2Vg1XzKiULuJXtQILSX5pdPmM7TfjWliei6ql6XHHpDnwmrPLxQHR8_DCKOPcwdjfpndpADoLzWq-9Evzu9kJBOKlrMI0D4T-aMpvvb/s1600/Cluster%20the%20Forest%20Fasilitas.webp" class="d-block w-100"></div>
+								<div class="carousel-item"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8r-8cUZMm7pkceF5343z2qYNgfcuyDyka-Nqe96W74BhW9WRqZ-cbwO_kKHZJrTiz2h0WgFLdzKnvrKH2g0n-XuVmZd9q4UJR5EH22y1eJ17EuCSsZUh_WK-9npOOZQmTqgqxrkvT_hPyDCIpFHVC52Bv4e14crAgTqzWqsMha-71Qil-uQXe-wRI/s1600/Cluster%20the%20Forest%20Siteplan.webp" class="d-block w-100"></div>
+								
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnit6" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselUnit6" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                        </div>
+                        <div class="card-body p-4">
+						    <p style="color: var(--gold); letter-spacing: 4px; font-weight: 700;">CLUSTER THE FOREST</p>
+                            <h4 class="fw-bold">Kavling Siap Bangun</h4>
+                            <p class="price-tag">Rp 13.6 Juta-an per m2</p>
+                            <div class="spec-grid">
+                                <div class="spec-item"><i class="bi bi-door-open"></i><span>n/a Bed</span></div>
+                                <div class="spec-item"><i class="bi bi-droplet"></i><span>n/a Bath</span></div>
+                                <div class="spec-item"><i class="bi bi-p-square"></i><span>n/a Car</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="progress" class="py-5 bg-white text-center">
+        <div class="container py-4">
+            <h2 class="fw-bold mb-5">Project Update</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.blogger.com/video.g?token=AD6v5dw8qgs81vpsTrNYuHo3dyU8o5koWOazQ9ZGGiWx5CK98JBpEWv3JnGYEiSF-iDqGubCqQMPG7kODWwsV0qkr4GAOFfkQte6_ijQUdosrPBhBz0D_Uvhp3YkuKE0FmYy0ffu5Cw" allowfullscreen></iframe>
+                    </div>
+                    <p class="mt-3 fw-bold">Update Projects of Shila Sawangan (Dec 2025)</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="video-wrapper">
+                        <iframe
+    src="https://www.blogger.com/video.g?token=AD6v5dy7RpyFw7C8mBrijNEu2DDo2WXmKC3MSq7XdvoQd5VkvPOYjp02RV9a_Y2RnjyAAOWVVYsRkAG1Ek9GfoSiIOjjWOFL3WWyBqnp_Yi-rvnT8BYUbWd2bctUtDZakGwhzhl2O_4"
+    allowfullscreen
+  ></iframe>
+                    </div>
+                    <p class="mt-3 fw-bold">Cluster Lake Vista <b>Type Oakwood</b></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promo" class="promo-banner text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-4">PROMO BULAN INI</h2>
+            <p class="fs-4"><b>DP 0%</b> <br/>Subsidi Biaya AJB BPHTB <br/>Subsidi Biaya Akad 3% <br/>Diskon 50 Juta* </p>
+            <div class="badge bg-danger fs-5 px-4 py-2 mt-3">Unit Terbatas!</div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow p-4">
+                        <h3 class="fw-bold mb-3">Unduh Brosur & Price List</h3>
+                        <form id="leadsForm">
+                            <input type="text" name="nama" class="form-control mb-3 py-3" placeholder="Nama Lengkap" required>
+                            <input type="email" name="email" class="form-control mb-3 py-3" placeholder="Email Aktif" required>
+                            <input type="tel" name="whatsapp" class="form-control mb-4 py-3" placeholder="No. WhatsApp" required>
+                            <button type="submit" id="submitBtn" class="btn btn-gold w-100 py-3 fs-5">KIRIM & DOWNLOAD</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center border-start">
+                    <i class="bi bi-whatsapp text-gold display-4"></i>
+                    <h4 class="fw-bold mt-3">Tanya Lewat WhatsApp</h4>
+                    <p class="mb-4">Chat marketing kami untuk respon cepat.</p>
+                    <a href="https://wa.link/zv1rfh" class="btn btn-success btn-lg px-5 py-3 rounded-pill shadow">CHAT SEKARANG</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark text-white text-center border-top border-gold">
+        <div class="container">
+            <p class="small text-secondary mb-0">© 2026 LAKE SERIES @Shila Sawangan by: <a href="https://prime.listings.my.id" target="_blank"> Prime Listings</a></p>
+			<p class="small text-secondary mb-0">Member Agent of NAM3 Property - All Rights Reserved</a></p>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="backToTop"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const topBtn = document.getElementById("backToTop");
+        window.onscroll = () => {
+            topBtn.style.display = (window.scrollY > 400) ? "block" : "none";
+        };
+        const scrollToTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
+
+        const form = document.getElementById('leadsForm');
+        const btn = document.getElementById('submitBtn');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxUb0ypDn3VyJdBIGY0PO4FZR5rExIg5Z-GMuU5cxp-B1eKJxsK5XGq9SOeT0g5lcA/exec';
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.innerHTML = "Mengirim...";
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(res => {
+                    alert('Data terkirim! Brosur akan terbuka di tab baru.');
+                    window.open('https://drive.google.com/file/d/1dWqpDTAo0UciUsyOlyiALg4jV_9tOLkA/view?usp=sharing', '_blank');
+                    form.reset();
+                    btn.disabled = false;
+                    btn.innerHTML = "KIRIM & DOWNLOAD";
+                })
+                .catch(err => {
+                    btn.disabled = false;
+                    btn.innerHTML = "KIRIM & DOWNLOAD";
+                    alert('Gagal mengirim data.');
+                });
+        });
+    </script>
+</body>
+</html>
